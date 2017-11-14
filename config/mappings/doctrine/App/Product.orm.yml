@@ -1,0 +1,22 @@
+App\Entity\Product:
+  type: 'entity'
+  table: 'app_product'
+  id:
+    id:
+      type: 'integer'
+      generator:
+        strategy: 'AUTO'
+  fields:
+    name:
+      type: 'string'
+    description:
+      type: 'string'
+    price:
+      type: 'float'
+  manyToOne:
+    category:
+      targetEntity: 'App\Entity\Category'
+      inversedBy: 'products'
+      joinColumn:
+        name: 'category_id'
+        referencedColumnName: 'id'

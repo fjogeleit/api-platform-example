@@ -1,0 +1,17 @@
+App\Entity\Category:
+  type: 'entity'
+  table: 'app_category'
+  id:
+    id:
+      type: 'integer'
+      generator:
+        strategy: 'AUTO'
+  fields:
+    name:
+      type: 'string'
+    description:
+      type: 'string'
+  oneToMany:
+    products:
+      targetEntity: 'App\Entity\Product'
+      mappedBy: 'category'
