@@ -2,6 +2,11 @@
 
 This Example use an file based SQLite DB to store any persisted Data.
 
+## Requirements
+
+* PHP 7.1
+* PHP71-SQLite Extension
+
 ## Installation
 
 Init the SQLite DB`
