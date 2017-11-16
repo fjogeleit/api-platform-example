@@ -1,0 +1,6 @@
+App\Entity\Category:
+    properties:
+        name:
+            - NotBlank: ~
+        description:
+            - NotBlank: ~

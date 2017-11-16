@@ -1,0 +1,4 @@
+App\Entity\Warehouse:
+    properties:
+        name:
+            - NotBlank: ~

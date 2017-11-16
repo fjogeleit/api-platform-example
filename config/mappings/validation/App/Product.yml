@@ -2,3 +2,18 @@ App\Entity\Product:
     properties:
         name:
             - NotBlank: ~
+        category:
+            - NotNull: ~
+        amount:
+            - NotNull: ~
+            - Type: 'integer'
+            - GreaterThanOrEqual:
+                value: 0
+        price:
+            - NotNull: ~
+            - GreaterThan:
+                value: 0
+        warehouses:
+            - Count:
+                min: 1
+                minMessage: 'You must specify at least one warehouse'
