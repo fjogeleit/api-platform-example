@@ -1,0 +1,4 @@
+App\Entity\Warehouse:
+    attributes:
+        name:
+            groups: ['warehouse_write']

@@ -1,0 +1,12 @@
+App\Entity\Product:
+    attributes:
+        name:
+            groups: ['product_view', 'product_list']
+        description:
+            groups: ['product_view', 'product_list']
+        amount:
+            groups: ['product_view']
+        price:
+            groups: ['product_view', 'product_list']
+        category:
+            groups: ['product_view']

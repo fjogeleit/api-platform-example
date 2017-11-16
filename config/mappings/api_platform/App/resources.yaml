@@ -1,9 +1,17 @@
 resources:
-    App\Entity\Product: ~
-    App\Entity\Warehouse: ~
+    App\Entity\Product:
+        attributes:
+            normalization_context: { groups: ['product_view'] }
+        collectionOperations:
+            get:
+                method: 'GET'
+                normalization_context: { groups: ['product_list'] }
+    App\Entity\Warehouse:
+        attributes:
+            denormalization_context: { groups: ['warehouse_write'] }
     App\Entity\Category:
         properties:
             products:
                 subresource: { collection: true, resourceClass: 'App\Entity\Product' }
         attributes:
-            denormalization_context: { groups: ['write'] }
+            denormalization_context: { groups: ['category_write'] }
