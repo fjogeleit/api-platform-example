@@ -1,0 +1,6 @@
+App\Entity\Category:
+    attributes:
+        name:
+            groups: ['write']
+        description:
+            groups: ['write']

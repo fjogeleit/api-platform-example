@@ -20,3 +20,7 @@ App\Entity\Product:
       joinColumn:
         name: 'category_id'
         referencedColumnName: 'id'
+  manyToMany:
+    warehouses:
+      targetEntity: 'App\Entity\Warehouse'
+      mappedBy: 'products'

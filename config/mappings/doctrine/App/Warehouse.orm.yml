@@ -1,0 +1,23 @@
+App\Entity\Warehouse:
+  type: 'entity'
+  table: 'app_warehouse'
+  id:
+    id:
+      type: 'integer'
+      generator:
+        strategy: 'AUTO'
+  fields:
+    name:
+      type: 'string'
+  manyToMany:
+    products:
+      targetEntity: 'App\Entity\Product'
+      inversedBy: 'warehouses'
+      joinTable:
+        name: 'app_warehouse_to_products'
+        joinColumns:
+          warehouse_id:
+            referencedColumnName: 'id'
+        inverseJoinColumns:
+          product_id:
+            referencedColumnName: 'id'

@@ -1,0 +1,6 @@
+resources:
+    App\Entity\Product: ~
+    App\Entity\Warehouse: ~
+    App\Entity\Category:
+        attributes:
+            denormalization_context: { groups: ['write'] }

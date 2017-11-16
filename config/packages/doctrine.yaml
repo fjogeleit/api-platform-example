@@ -1,7 +1,7 @@
 doctrine:
     dbal:
         driver: 'pdo_sqlite'
-        path: '%kernel.cache_dir%/sqlite.db3'
+        path: '%kernel.project_dir%/var/db/sqlite.db3'
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: 'doctrine.orm.naming_strategy.underscore'

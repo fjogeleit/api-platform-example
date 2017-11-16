@@ -1,14 +1,12 @@
 framework:
     secret: '%env(APP_SECRET)%'
-    #default_locale: en
-    #csrf_protection: ~
-    #http_method_override: true
-    #trusted_hosts: ~
-    # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
-    #session:
-    #    # The native PHP session handler will be used
-    #    handler_id: ~
-    #esi: ~
-    #fragments: ~
+    serializer:
+        enabled: true
+        mapping:
+            paths: ['%kernel.project_dir%/config/mappings/serialization/App']
+    validation:
+        enabled: true
+        mapping:
+            paths: ['%kernel.project_dir%/config/mappings/validation/App']
     php_errors:
         log: true

@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 class Product
 {
     /**
@@ -21,6 +24,11 @@ class Product
     private $price;
 
     /**
+     * @var int
+     */
+    private $amount;
+
+    /**
      * @var string
      */
     private $description;
@@ -29,6 +37,16 @@ class Product
      * @var Category
      */
     private $category;
+
+    /**
+     * @var Collection|Warehouse[]
+     */
+    private $warehouses;
+
+    public function __construct()
+    {
+        $this->warehouses = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -65,9 +83,25 @@ class Product
     /**
      * @param float $price
      */
-    public function setPrice(float $price)
+    public function setPrice(float $price): void
     {
         $this->price = $price;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAmount(): int
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param int $amount
+     */
+    public function setAmount(int $amount): void
+    {
+        $this->amount = $amount;
     }
 
     /**
@@ -81,7 +115,7 @@ class Product
     /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription(string $description): void
     {
         $this->description = $description;
     }
@@ -97,8 +131,33 @@ class Product
     /**
      * @param Category $category
      */
-    public function setCategory(Category $category)
+    public function setCategory(Category $category): void
     {
         $this->category = $category;
+    }
+
+    /**
+     * @return Warehouse[]|Collection
+     */
+    public function getWarehouses(): Collection
+    {
+        return $this->warehouses;
+    }
+
+    /**
+     * @param Warehouse $warehouse
+     */
+    public function addWarehouse(Warehouse $warehouse): void
+    {
+        $this->warehouses->add($warehouse);
+        $warehouse->addProduct($this);
+    }
+
+    /**
+     * @param Warehouse $warehouse
+     */
+    public function removeWarehouse(Warehouse $warehouse): void
+    {
+        $this->warehouses->removeElement($warehouse);
     }
 }
