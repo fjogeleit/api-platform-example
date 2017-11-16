@@ -9,7 +9,8 @@ This Example use an file based SQLite DB to store any persisted Data.
 
 ## Installation
 
-Init the SQLite DB`
+Init the SQLite DB
+
 ``
 php bin/console doctrine:schema:create
 ``
