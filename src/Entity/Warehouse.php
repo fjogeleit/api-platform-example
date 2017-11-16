@@ -75,4 +75,17 @@ class Warehouse
     {
         $this->products->removeElement($product);
     }
+
+    /**
+     * @param string $name
+     *
+     * @return Warehouse
+     */
+    public static function create(string $name): self
+    {
+        $warehouse = new self();
+        $warehouse->setName($name);
+
+        return $warehouse;
+    }
 }

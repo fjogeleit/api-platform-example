@@ -160,4 +160,36 @@ class Product
     {
         $this->warehouses->removeElement($warehouse);
     }
+
+    /**
+     * @param string   $name
+     * @param string   $description
+     * @param float    $price
+     * @param int      $amount
+     * @param Category $category
+     * @param array    $warehouses
+     * @return Product
+     */
+    public static function create(
+        string $name,
+        string $description,
+        float $price,
+        int $amount,
+        Category $category,
+        array $warehouses
+    ): self
+    {
+        $product = new Product();
+        $product->setName($name);
+        $product->setPrice($price);
+        $product->setAmount($amount);
+        $product->setDescription($description);
+        $product->setCategory($category);
+
+        foreach ($warehouses as $warehouse) {
+            $product->addWarehouse($warehouse);
+        }
+
+        return $product;
+    }
 }

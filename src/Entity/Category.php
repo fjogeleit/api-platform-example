@@ -88,4 +88,19 @@ class Category
     {
         $this->products = $products;
     }
+
+    /**
+     * @param string $name
+     * @param string $description
+     *
+     * @return Category
+     */
+    public static function create(string $name, string $description): self
+    {
+        $category = new self();
+        $category->setName($name);
+        $category->setDescription($description);
+
+        return $category;
+    }
 }

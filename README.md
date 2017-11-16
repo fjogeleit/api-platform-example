@@ -15,6 +15,11 @@ Init the SQLite DB
 php bin/console doctrine:schema:create
 ``
 
+Load Example Fixtures
+``
+php bin/console doctrine:fixtures:load
+``
+
 Start the Application:
 
 ``
