@@ -22,6 +22,7 @@ php bin/console doctrine:schema:create
 ``
 
 Load Example Fixtures
+
 ``
 php bin/console doctrine:fixtures:load
 ``
