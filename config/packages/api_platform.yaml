@@ -2,3 +2,9 @@ api_platform:
     version: '1.0.0'
     mapping:
         paths: ['%kernel.project_dir%/config/mappings/api_platform/App']
+
+services:
+    product.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [{ category: 'exact', name: 'partial' }]
+        tags: ['api_platform.filter']

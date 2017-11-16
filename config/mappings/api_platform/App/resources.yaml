@@ -2,8 +2,12 @@ resources:
     App\Entity\Product:
         attributes:
             normalization_context: { groups: ['product_view'] }
+            filters: ['product.search_filter']
         collectionOperations:
             get:
+                method: 'GET'
+                normalization_context: { groups: ['product_list'] }
+            api_categories_products_get_subresource:
                 method: 'GET'
                 normalization_context: { groups: ['product_list'] }
     App\Entity\Warehouse:
