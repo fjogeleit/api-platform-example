@@ -39,6 +39,11 @@ class Product
     private $category;
 
     /**
+     * @var bool
+     */
+    private $disabled = false;
+
+    /**
      * @var Collection|Warehouse[]
      */
     private $warehouses;
@@ -159,6 +164,24 @@ class Product
     public function removeWarehouse(Warehouse $warehouse): void
     {
         $this->warehouses->removeElement($warehouse);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDisabled(): bool
+    {
+        return $this->disabled;
+    }
+
+    public function disable(): void
+    {
+        $this->disabled = true;
+    }
+
+    public function enable(): void
+    {
+        $this->disabled = false;
     }
 
     /**

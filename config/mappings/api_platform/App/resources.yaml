@@ -3,6 +3,9 @@ resources:
         attributes:
             normalization_context: { groups: ['product_view'] }
             filters: ['product.search_filter']
+            pagination_client_enabled: true
+            client_items_per_page: true
+            pagination_items_per_page: 50
         collectionOperations:
             get:
                 method: 'GET'
@@ -14,6 +17,8 @@ resources:
         attributes:
             denormalization_context: { groups: ['warehouse_write'] }
     App\Entity\Category:
+        attributes:
+            pagination_enabled: false
         properties:
             products:
                 subresource: { collection: true, resourceClass: 'App\Entity\Product' }

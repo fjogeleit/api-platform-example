@@ -14,3 +14,7 @@ services:
     App\Action\:
         resource: '../src/Action'
         tags: ['controller.service_arguments']
+
+    App\Extension\ActiveProductExtension:
+        tags:
+            - { name: 'api_platform.doctrine.orm.query_extension.collection', priority: 9 }

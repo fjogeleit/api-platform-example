@@ -33,6 +33,19 @@ class ProductFixtures extends Fixture
             [$this->getReference('dresden-warehouse'), $this->getReference('leipzig-warehouse')]
         ));
 
+        $product = Product::create(
+            'Blue Jeans',
+            'Blue Jeans Klassiker',
+            55.00,
+            0,
+            $this->getReference('clothes-category'),
+            [$this->getReference('dresden-warehouse'), $this->getReference('leipzig-warehouse')]
+        );
+
+        $product->disable();
+
+        $manager->persist($product);
+
         $manager->flush();
     }
 
