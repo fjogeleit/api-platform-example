@@ -9,6 +9,12 @@ This Example use an file based SQLite DB to store any persisted Data.
 
 ## Installation
 
+Install dependencies
+
+``
+composer install
+``
+
 Init the SQLite DB
 
 ``
