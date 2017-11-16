@@ -13,6 +13,8 @@ App\Entity\Product:
       type: 'string'
     price:
       type: 'float'
+    amount:
+      type: 'integer'
   manyToOne:
     category:
       targetEntity: 'App\Entity\Category'

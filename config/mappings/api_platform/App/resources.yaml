@@ -2,5 +2,8 @@ resources:
     App\Entity\Product: ~
     App\Entity\Warehouse: ~
     App\Entity\Category:
+        properties:
+            products:
+                subresource: { collection: true, resourceClass: 'App\Entity\Product' }
         attributes:
             denormalization_context: { groups: ['write'] }
