@@ -6,6 +6,7 @@ This Example use an file based SQLite DB to store any persisted Data.
 
 * PHP 7.1
 * PHP71-SQLite Extension
+* Composer
 
 ## Installation
 
