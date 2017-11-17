@@ -1,10 +1,12 @@
 App\Entity\Product:
     attributes:
         name:
+            # included in item and collection GET Requests
             groups: ['product_view', 'product_list']
         description:
             groups: ['product_view', 'product_list']
         amount:
+            # property only in the item get operation requests
             groups: ['product_view']
         price:
             groups: ['product_view', 'product_list']

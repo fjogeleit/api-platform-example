@@ -15,6 +15,7 @@ services:
         resource: '../src/Action'
         tags: ['controller.service_arguments']
 
+    # Extension to filter disabled products in every api endpoint
     App\Extension\ActiveProductExtension:
         tags:
             - { name: 'api_platform.doctrine.orm.query_extension.collection', priority: 9 }

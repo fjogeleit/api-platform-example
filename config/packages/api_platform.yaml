@@ -4,9 +4,13 @@ api_platform:
         paths: ['%kernel.project_dir%/config/mappings/api_platform/App']
     swagger:
         api_keys:
+            # enable authorization header in the swagger ui
             - { name: 'Authorization', type: 'header' }
 
 services:
+    # define filter for product collectionOperations
+    # add filter for category by ID
+    # add filter for name - partial: is name filter a substring of the product name
     product.search_filter:
         parent: 'api_platform.doctrine.orm.search_filter'
         arguments: [{ category: 'exact', name: 'partial' }]

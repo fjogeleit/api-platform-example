@@ -1,14 +1,20 @@
 resources:
     App\Entity\Product:
         attributes:
+            # Entity global normalizer group
             normalization_context: { groups: ['product_view'] }
+            # Config filter for product collections
             filters: ['product.search_filter']
+            # Enable optional GET Parameter to enable or disable pagination per request
             pagination_client_enabled: true
+            # Enable optional GET Parameter to enable or disable the number per page
             client_items_per_page: true
+            # Default number of items per page
             pagination_items_per_page: 50
         collectionOperations:
             get:
                 method: 'GET'
+                # Override the global normalization_context for a single endpoint
                 normalization_context: { groups: ['product_list'] }
             api_categories_products_get_subresource:
                 method: 'GET'
@@ -20,10 +26,13 @@ resources:
                 method: 'PUT'
             delete:
                 method: 'DELETE'
+                # Override the default delete action
                 route_name: 'app_product_delete'
+                # Access reduced to authenticated ADMIN user
                 access_control: is_granted('ROLE_ADMIN')
     App\Entity\Warehouse:
         attributes:
+            # Entity global denormalization_context to define writable properties in post and put requests
             denormalization_context: { groups: ['warehouse_write'] }
         itemOperations:
             get:
@@ -38,6 +47,7 @@ resources:
             pagination_enabled: false
         properties:
             products:
+                # Add a subresource endpoint for a list of products of a given category
                 subresource: { collection: true, resourceClass: 'App\Entity\Product' }
         attributes:
             denormalization_context: { groups: ['category_write'] }
@@ -45,15 +55,19 @@ resources:
         attributes:
             pagination_enabled: false
         collectionOperations:
+            # add a custom action for a JWT User Login
             login:
                 method: 'POST'
                 route_name: 'app_user_login'
                 denormalization_context: { groups: ['user_login'] }
+                # Config the action in Swagger UI
                 swagger_context:
                     summary: 'API User-Login'
                     description: 'JWT API User-Login'
+                    # Reduce callable content header for this endpoint to application/json
                     consumes: ['application/json']
                     produces: ['application/json']
+                    # Config the Preview of 201 and 401 responses
                     responses:
                         201:
                             description: 'JWT Token'
@@ -68,16 +82,14 @@ resources:
                                 properties:
                                     code: { type: 'integer' }
                                     message: { type: 'string' }
-
-
-
-
-
+            # custom action to get data from the authenticated user
             current:
                 method: 'GET'
                 route_name: 'users_current'
+                # reduce access to authenticated user
                 access_control: is_granted('IS_AUTHENTICATED_FULLY')
                 swagger_context:
                     summary: 'Logged in User'
                     description: 'Logged in UserData'
+        # disable all item operation (single get, put and delete endpoints)
         itemOperations: []
