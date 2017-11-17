@@ -42,7 +42,7 @@ class ProductFixtures extends Fixture
             [$this->getReference('dresden-warehouse'), $this->getReference('leipzig-warehouse')]
         );
 
-        $product->disable();
+        $product->delete();
 
         $manager->persist($product);
 

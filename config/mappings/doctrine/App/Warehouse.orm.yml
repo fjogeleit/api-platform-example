@@ -9,6 +9,8 @@ App\Entity\Warehouse:
   fields:
     name:
       type: 'string'
+    deleted:
+      type: 'boolean'
   manyToMany:
     products:
       targetEntity: 'App\Entity\Product'

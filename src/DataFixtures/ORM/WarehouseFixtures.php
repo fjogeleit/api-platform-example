@@ -19,6 +19,7 @@ class WarehouseFixtures extends Fixture
 
         $manager->persist($dresden);
         $manager->persist($leipzig);
+        $manager->persist(Warehouse::create('Zittau'));
         $manager->flush();
 
         $this->addReference('dresden-warehouse', $dresden);

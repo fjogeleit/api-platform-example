@@ -6,7 +6,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
-class Product
+class Product implements DeletableInterface
 {
     /**
      * @var int
@@ -41,7 +41,7 @@ class Product
     /**
      * @var bool
      */
-    private $disabled = false;
+    private $deleted = false;
 
     /**
      * @var Collection|Warehouse[]
@@ -169,19 +169,14 @@ class Product
     /**
      * @return bool
      */
-    public function isDisabled(): bool
+    public function isDeleted(): bool
     {
-        return $this->disabled;
+        return $this->deleted;
     }
 
-    public function disable(): void
+    public function delete(): void
     {
-        $this->disabled = true;
-    }
-
-    public function enable(): void
-    {
-        $this->disabled = false;
+        $this->deleted = true;
     }
 
     /**

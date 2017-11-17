@@ -15,7 +15,7 @@ App\Entity\Product:
       type: 'float'
     amount:
       type: 'integer'
-    disabled:
+    deleted:
       type: 'boolean'
   manyToOne:
     category:

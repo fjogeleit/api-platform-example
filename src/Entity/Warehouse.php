@@ -23,6 +23,11 @@ class Warehouse
      */
     private $products;
 
+    /**
+     * @var bool
+     */
+    private $deleted = false;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -74,6 +79,19 @@ class Warehouse
     public function removeProduct(Product $product): void
     {
         $this->products->removeElement($product);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isDeleted(): bool
+    {
+        return $this->deleted;
+    }
+
+    public function delete(): void
+    {
+        $this->deleted = true;
     }
 
     /**

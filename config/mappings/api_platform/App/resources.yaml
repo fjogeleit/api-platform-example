@@ -16,12 +16,23 @@ resources:
         itemOperations:
             get:
                 method: 'GET'
+            put:
+                method: 'PUT'
             delete:
                 method: 'DELETE'
+                route_name: 'app_product_delete'
                 access_control: is_granted('ROLE_ADMIN')
     App\Entity\Warehouse:
         attributes:
             denormalization_context: { groups: ['warehouse_write'] }
+        itemOperations:
+            get:
+                method: 'GET'
+            put:
+                method: 'PUT'
+            delete:
+                method: 'DELETE'
+                route_name: 'app_warehouse_delete'
     App\Entity\Category:
         attributes:
             pagination_enabled: false
