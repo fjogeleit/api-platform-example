@@ -1,0 +1,13 @@
+App\Entity\User\Role:
+  type: 'entity'
+  table: 'app_role'
+  id:
+    id:
+      type: 'integer'
+      generator:
+        strategy: 'AUTO'
+  fields:
+    name:
+      type: 'string'
+    created:
+      type: 'datetime'

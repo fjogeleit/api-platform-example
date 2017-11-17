@@ -1,0 +1,28 @@
+App\Entity\User:
+  type: 'entity'
+  table: 'app_user'
+  id:
+    id:
+      type: 'integer'
+      generator:
+        strategy: 'AUTO'
+  fields:
+    email:
+      type: 'string'
+    password:
+      type: 'string'
+    active:
+      type: 'boolean'
+    created:
+      type: 'datetime'
+  manyToMany:
+    roles:
+      targetEntity: 'App\Entity\User\Role'
+      joinTable:
+        name: 'app_role_to_user'
+        joinColumns:
+          user_id:
+            referencedColumnName: 'id'
+        inverseJoinColumns:
+          role_id:
+            referencedColumnName: 'id'

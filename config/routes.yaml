@@ -1,3 +1,6 @@
 #app:
 #    resource: '../src/Action/'
 #    type: 'annotation'
+
+login_check:
+    path: '/login_check'

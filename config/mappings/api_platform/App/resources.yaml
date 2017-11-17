@@ -13,6 +13,12 @@ resources:
             api_categories_products_get_subresource:
                 method: 'GET'
                 normalization_context: { groups: ['product_list'] }
+        itemOperations:
+            get:
+                method: 'GET'
+            delete:
+                method: 'DELETE'
+                access_control: is_granted('ROLE_ADMIN')
     App\Entity\Warehouse:
         attributes:
             denormalization_context: { groups: ['warehouse_write'] }

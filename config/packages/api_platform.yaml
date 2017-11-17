@@ -2,6 +2,9 @@ api_platform:
     version: '1.0.0'
     mapping:
         paths: ['%kernel.project_dir%/config/mappings/api_platform/App']
+    swagger:
+        api_keys:
+            - { name: 'Authorization', type: 'header' }
 
 services:
     product.search_filter:
