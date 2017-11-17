@@ -48,3 +48,18 @@ All configurations are in YAML format. Located in config/mappings
 * Define additional Filters
 * Add Custom Extension
 * Change pagination-configuration for single entities
+* Implement Authorization with JWT
+* Implement custom Action
+* Override default CRUD Actions (implement softdelete)
+
+## Authorization
+
+Use the ``users/login`` action in Swagger UI to call authorized API calls.
+
+Test-User:
+- username: user@api-example.de password: phpdd_ug2017
+- username: admin@api-example.de password: phpdd_ug2017
+
+Authrorize with the generated Token and the Bearer-Prefix.
+Example:
+``Bearer E1MTA5MzU0MDAsImV4cCI6MTUxMTAyMTgwMH0.ndbQig_-Tmou_zGRTcF1ERnr__XwDkVqoUm14QjmfxBAVuu-uPoSSjSia5gjbJMH5ouBBnLu91LMgc4A95TARACgt3sxpbfSQlj_FXmFLQgxh3o8LT...``
