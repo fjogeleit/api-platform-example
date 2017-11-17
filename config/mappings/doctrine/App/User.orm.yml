@@ -9,6 +9,8 @@ App\Entity\User:
   fields:
     email:
       type: 'string'
+    username:
+      type: 'string'
     password:
       type: 'string'
     active:

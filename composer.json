@@ -4,6 +4,7 @@
     "require": {
         "php": "^7.0.8",
         "lexik/jwt-authentication-bundle": "^2.4",
+        "sensio/framework-extra-bundle": "^5.0",
         "symfony/console": "^3.3",
         "symfony/framework-bundle": "^3.3",
         "symfony/yaml": "^3.3"

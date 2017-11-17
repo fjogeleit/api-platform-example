@@ -17,6 +17,11 @@ class User implements UserInterface
     /**
      * @var string
      */
+    protected $username;
+
+    /**
+     * @var string
+     */
     protected $email;
 
     /**
@@ -139,7 +144,17 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->getEmail();
+        return $this->username;
+    }
+
+    /**
+     * @param $username
+     *
+     * @return string
+     */
+    public function setUsername($username): string
+    {
+        return $this->username = $username;
     }
 
     /**
@@ -162,6 +177,7 @@ class User implements UserInterface
 
     /**
      * @param string $email
+     * @param string $password
      * @param Role   $role
      *
      * @return User
@@ -170,6 +186,7 @@ class User implements UserInterface
     {
         $user = new self();
         $user->setEmail($email);
+        $user->setUsername($email);
         $user->setPassword($password);
         $user->addRole($role);
 

@@ -256,5 +256,14 @@
             "version": "2.3",
             "ref": "751ee6748c1026fa4350c155d1b3a77b7ddca69c"
         }
+    },
+    "sensio/framework-extra-bundle": {
+        "version": "4.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.0",
+            "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
+        }
     }
 }

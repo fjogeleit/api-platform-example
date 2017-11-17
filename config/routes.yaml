@@ -1,6 +1,7 @@
-#app:
-#    resource: '../src/Action/'
-#    type: 'annotation'
+app:
+    resource: '../src/Action/'
+    type: 'annotation'
 
-login_check:
-    path: '/login_check'
+app_user_login:
+    path: '/users/login'
+    defaults: { _api_resource_class: 'App\Entity\User', _api_collection_cperation_name: 'login' }

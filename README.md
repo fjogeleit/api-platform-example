@@ -10,8 +10,7 @@ This example application using Symfony Flex with Symfony 3.3 and a file based SQ
 
 ## Installation
 
-Copy the ``.env.dist`` file in your app root dir and rename it to ``.env`
-`
+Copy the ``.env.dist`` file in your app root dir and rename it to ``.env``
 Install dependencies
 
 ``

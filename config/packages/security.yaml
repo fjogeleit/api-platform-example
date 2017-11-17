@@ -17,11 +17,11 @@ security:
             pattern: '^/(_(profiler|wdt)|css|images|js)/'
             security: false
         login:
-            pattern:  '^/login'
+            pattern:  '^/users/login'
             stateless: true
             anonymous: true
             json_login:
-                check_path:               '/login_check'
+                check_path:               '/users/login'
                 success_handler:          'lexik_jwt_authentication.handler.authentication_success'
                 failure_handler:          'lexik_jwt_authentication.handler.authentication_failure'
                 require_previous_session: false

@@ -1,0 +1,6 @@
+App\Entity\User:
+    attributes:
+        username:
+            groups: ['user_login']
+        password:
+            groups: ['user_login']
