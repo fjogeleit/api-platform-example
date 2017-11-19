@@ -60,6 +60,6 @@ Test-User:
 - username: user@api-example.de password: phpdd_ug2017
 - username: admin@api-example.de password: phpdd_ug2017
 
-Authrorize with the generated Token and the Bearer-Prefix.
+Authorize with the generated Token and the Bearer-Prefix.
 Example:
 ``Bearer E1MTA5MzU0MDAsImV4cCI6MTUxMTAyMTgwMH0.ndbQig_-Tmou_zGRTcF1ERnr__XwDkVqoUm14QjmfxBAVuu-uPoSSjSia5gjbJMH5ouBBnLu91LMgc4A95TARACgt3sxpbfSQlj_FXmFLQgxh3o8LT...``
